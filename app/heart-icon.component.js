@@ -20,11 +20,28 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             HeartIconComponent = (function () {
                 function HeartIconComponent() {
+                    this.isSelected = false;
+                    this.change = new core_1.EventEmitter();
+                    this.likeCount = 25;
                 }
+                HeartIconComponent.prototype.onClick = function () {
+                    this.isSelected = !this.isSelected;
+                    this.likeCount = (this.isSelected) ? this.likeCount + 1 : this.likeCount - 1;
+                    this.change.emit({ newValue: this.isSelected });
+                };
+                __decorate([
+                    core_1.Input('is-selected'), 
+                    __metadata('design:type', Boolean)
+                ], HeartIconComponent.prototype, "isSelected", void 0);
+                __decorate([
+                    core_1.Output(), 
+                    __metadata('design:type', Object)
+                ], HeartIconComponent.prototype, "change", void 0);
                 HeartIconComponent = __decorate([
                     core_1.Component({
                         selector: 'heart-icon',
-                        templateUrl: 'app/heart-icon.template.html'
+                        templateUrl: 'app/heart-icon.template.html',
+                        styles: ["\n        .grey-heart {color:#ccc;}\n        .pink-heart {color:deeppink;}\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HeartIconComponent);

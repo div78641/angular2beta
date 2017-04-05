@@ -1,4 +1,6 @@
 <i class="glyphicon glyphicon-heart" 
-    style="color:#ccc;cursor: pointer;" 
+    [class.grey-heart]="!isSelected"
+    [class.pink-heart]="isSelected"
+    style="cursor: pointer;"
     (click)="onClick()"></i>
-<span>10</span>
+<span>{{ likeCount }}</span>

@@ -16,5 +16,4 @@ export class StarIconComponent{
         this.isActive = !this.isActive;
         this.change.emit({ newValue: this.isActive });
     }
-
 }
