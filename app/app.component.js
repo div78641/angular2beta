@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './authors.component', './star-icon.component', './heart-icon.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './authors.component', './star-icon.component', './heart-icon.component', './vote.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './authors.component', 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, authors_component_1, star_icon_component_1, heart_icon_component_1;
+    var core_1, courses_component_1, authors_component_1, star_icon_component_1, heart_icon_component_1, vote_component_1;
     var AppComponent;
     return {
         setters:[
@@ -28,6 +28,9 @@ System.register(['angular2/core', './courses.component', './authors.component', 
             },
             function (heart_icon_component_1_1) {
                 heart_icon_component_1 = heart_icon_component_1_1;
+            },
+            function (vote_component_1_1) {
+                vote_component_1 = vote_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -40,8 +43,8 @@ System.register(['angular2/core', './courses.component', './authors.component', 
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<h1>Hello Angular</h1>\n    <courses></courses><authors></authors>\n    <star-icon [isActive]=\"post.isActive\" (change)=\"onStarIconChange($event)\"></star-icon>\n    <heart-icon></heart-icon>",
-                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, star_icon_component_1.StarIconComponent, heart_icon_component_1.HeartIconComponent]
+                        template: "<h1>Hello Angular</h1>\n    <courses></courses><authors></authors>\n    <h2>Star</h2>\n    <star-icon [isActive]=\"post.isActive\" (change)=\"onStarIconChange($event)\"></star-icon>\n    <h2>Heart/Like</h2>\n    <heart-icon></heart-icon>\n    <h2>Stackoverflow Voter</h2>\n    <voter></voter>",
+                        directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, star_icon_component_1.StarIconComponent, heart_icon_component_1.HeartIconComponent, vote_component_1.VoterComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
